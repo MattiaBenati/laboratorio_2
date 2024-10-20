@@ -1,0 +1,7 @@
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y bash
+RUN mkdir -p /var/stateexample
+COPY stateexample.sh /usr/local/bin/stateexample.sh
+RUN chmod +x /usr/local/bin/stateexample.sh
+WORKDIR /var/stateexample
+ENTRYPOINT ["/usr/local/bin/stateexample.sh"]
